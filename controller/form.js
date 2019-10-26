@@ -131,7 +131,7 @@ exports.postWaitingForApproval = (req, res, next) => {
       // console.log(foundForm);
       var cd = "";
       console.log(req.body);
-      if (req.body.comment === 6) {
+      if (req.body.comment.localeCompare("others") == 0) {
         cd = req.body.other;
       } else {
         cd = req.body.comment;
