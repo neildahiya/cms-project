@@ -111,10 +111,12 @@ exports.postUpdateDepartment = (req, res, next) => {
             );
           } else {
             if (newDepartment) {
-              var b = new Department({ departmentName: newBudgetHead });
+              var b = new Department({ departmentName: newDepartment });
               b.save(err => {
                 console.log(err);
               });
+            } else {
+              console.log("here");
             }
             res.redirect("/adminDash");
           }
